@@ -60,6 +60,7 @@ $route['supplier']='padmin/supplier';
 $route['pemesanan']='padmin/pemesanan';
 $route['permintaan']='padmin/permintaan';
 $route['laporan']='padmin/laporan';
+$route['ranking']='padmin/ranking';
 $route['cetak']='padmin/cetak';
 $route['cetak/(:any)']='padmin/cetak/$i';
 $route['default_controller'] = 'padmin';

@@ -48,7 +48,7 @@ if(isset($_SESSION['logged_in'])){
               if($_SESSION['user_role']=='admin'){
                 ?>
                 <li><a href="<?php echo base_url(); ?>laporan"><i class="fa fa-user"></i>Laporan</a> </li>
-                <li><a href="<?php echo base_url(); ?>perangkingan"><i class="fa fa-user"></i>Perangkingan</a> </li>
+                <li><a href="<?php echo base_url(); ?>ranking"><i class="fa fa-user"></i>Perangkingan</a> </li>
                 <li><a href="<?php echo base_url(); ?>supplier"><i class="fa fa-industry"></i> Supplier</a> </li>
                 <li><a href="<?php echo base_url(); ?>user"><i class="fa fa-user"></i>User</a> </li>
               <?php } ?>

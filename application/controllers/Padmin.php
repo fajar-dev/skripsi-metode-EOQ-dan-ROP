@@ -33,6 +33,8 @@ class Padmin extends CI_Controller{
 			$user_id=$_SESSION['user_id'];
 			$x['guser']=$this->m_padmin->get_user($user_id);
 			$x['data']=$this->m_padmin->get_all_produk();
+			// $x['a']=$this->m_padmin->get_all_produk_hasil_eoq();
+			// print_r($x['a']);die();
 			$this->load->view('header');
 			$this->load->view('topbar',$x);
 			$this->load->view('sidebar',$x);
@@ -545,6 +547,20 @@ class Padmin extends CI_Controller{
 		$this->m_padmin->delete_produk_detail($kode);
 		echo $this->session->set_flashdata('msg','success-hapus');
 		redirect('produk/detail/'.$produk);
+	}
+
+	public function ranking(){
+		if(isset($_SESSION['logged_in'])){
+			$user_id=$_SESSION['user_id'];
+			$x['guser']=$this->m_padmin->get_user($user_id);
+			$x['eoq']=$this->m_padmin->get_all_produk_hasil_eoq();
+			print_r($x['eoq']);die();
+			$this->load->view('header');
+			$this->load->view('topbar',$x);
+			$this->load->view('sidebar',$x);
+			$this->load->view('produk/produk',$x);
+			$this->load->view('footer');
+		}
 	}
 
 }		

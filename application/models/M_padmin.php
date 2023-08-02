@@ -11,6 +11,17 @@ class M_padmin extends CI_Model{
 		$hasil=$this->db->query("SELECT * FROM produk");
 		return $hasil;
 	}
+	
+	function get_all_produk_hasil_eoq(){
+		$this->db->select('produk.produk_nama, produk.produk_kode, produk.produk_harga, MAX(persediaan.persediaan_eoq) AS max_eoq');
+        $this->db->from('produk');
+        $this->db->join('persediaan', 'produk.produk_kode = persediaan.produk_kode');
+        $this->db->group_by('produk.produk_kode');
+				$this->db->order_by('max_eoq', 'DESC');
+        $query = $this->db->get();
+
+        return $query->result_array();
+	}
 
 	function cek_username($user_username){
 		$hasil=$this->db->query("SELECT * FROM user where user_username='$user_username'");
