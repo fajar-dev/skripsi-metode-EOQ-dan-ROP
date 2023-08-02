@@ -20,7 +20,18 @@ class M_padmin extends CI_Model{
 				$this->db->order_by('max_eoq', 'DESC');
         $query = $this->db->get();
 
-        return $query->result_array();
+        return $query;
+	}
+
+	function get_all_produk_hasil_rop(){
+		$this->db->select('produk.produk_nama, produk.produk_kode, produk.produk_harga, MAX(persediaan.persediaan_rop) AS max_rop');
+        $this->db->from('produk');
+        $this->db->join('persediaan', 'produk.produk_kode = persediaan.produk_kode');
+        $this->db->group_by('produk.produk_kode');
+				$this->db->order_by('max_rop', 'DESC');
+        $query = $this->db->get();
+
+        return $query;
 	}
 
 	function cek_username($user_username){

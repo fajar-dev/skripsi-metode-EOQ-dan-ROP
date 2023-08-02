@@ -554,11 +554,12 @@ class Padmin extends CI_Controller{
 			$user_id=$_SESSION['user_id'];
 			$x['guser']=$this->m_padmin->get_user($user_id);
 			$x['eoq']=$this->m_padmin->get_all_produk_hasil_eoq();
-			print_r($x['eoq']);die();
+			$x['rop']=$this->m_padmin->get_all_produk_hasil_rop();
+			// print_r($x['eoq']);die();
 			$this->load->view('header');
 			$this->load->view('topbar',$x);
 			$this->load->view('sidebar',$x);
-			$this->load->view('produk/produk',$x);
+			$this->load->view('ranking/ranking',$x);
 			$this->load->view('footer');
 		}
 	}

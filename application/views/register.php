@@ -34,7 +34,7 @@
       <section class="login_content">
 
         <form action="<?php echo base_url().'loginadmin/auth'?>" method="POST">
-          <h1>Login</h1>
+          <h1>Register</h1>
           <div>
             <input type="text" class="form-control" placeholder="Username" name="user_username" required="" />
           </div>

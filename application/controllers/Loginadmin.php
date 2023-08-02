@@ -28,6 +28,9 @@ class Loginadmin extends CI_Controller{
         }
     }
 
+    function register(){
+        $this->load->view('register');
+    }
 
     function gagallogin(){
         $url=base_url();
