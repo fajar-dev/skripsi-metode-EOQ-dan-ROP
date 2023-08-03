@@ -27,7 +27,7 @@ class M_padmin extends CI_Model{
 	}
 
 	function get_all_produk(){
-		$hasil=$this->db->query("SELECT * FROM produk");
+		$hasil=$this->db->query("SELECT * FROM produk inner join kategori on produk.kategori_id=kategori.id_kategori");
 		return $hasil;
 	}
 	
@@ -169,12 +169,12 @@ class M_padmin extends CI_Model{
 		$hasil=$this->db->query("INSERT INTO user values(null,'$user_username',md5('$user_password'),'$user_nama','$user_email','$user_tel','$user_alamat','$user_role','$gambar')");
 		return $hasil;
 	}
-	function save_produk($kode,$nama,$harga,$stok,$bsimpan,$bpesan,$leadtime){
-		$hasil=$this->db->query("INSERT INTO produk VALUES ('$kode','$nama','$harga','$stok','$bpesan','$bsimpan','$leadtime')");
+	function save_produk($kode,$nama,$harga,$stok,$bsimpan,$bpesan,$leadtime,$kat){
+		$hasil=$this->db->query("INSERT INTO produk VALUES ('$kode','$kat','$nama','$harga','$stok','$bpesan','$bsimpan','$leadtime')");
 		return $hasil;
 	}
-	function update_produk($kode,$nama,$harga,$stok,$bsimpan,$bpesan,$leadtime){
-		$hasil=$this->db->query("UPDATE produk SET produk_nama='$nama',produk_harga='$harga',produk_stok='$stok',produk_bpesan='$bpesan',produk_bsimpan='$bsimpan',produk_leadtime='$leadtime' where produk_kode='$kode'");
+	function update_produk($kode,$nama,$harga,$stok,$bsimpan,$bpesan,$leadtime,$kat){
+		$hasil=$this->db->query("UPDATE produk SET produk_nama='$nama',kategori_id='$kat',produk_harga='$harga',produk_stok='$stok',produk_bpesan='$bpesan',produk_bsimpan='$bsimpan',produk_leadtime='$leadtime' where produk_kode='$kode'");
 		return $hasil;
 	}
 	function update_password($kode,$newpassword){

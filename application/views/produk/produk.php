@@ -37,7 +37,7 @@
                    <tr>
                     <td><?php echo $i['produk_kode']; ?></td>
                     <td><?php echo $i['produk_nama']; ?></td>
-                    <td><?php echo $i['produk_nama']; ?></td>
+                    <td><?php echo $i['kategori_nama']; ?></td>
                     <td>Rp. <?php echo number_format($i['produk_harga']); ?></td>
                     <td><?php echo number_format($i['produk_stok']); ?></td>
                     <td>Rp. <?php echo number_format($i['produk_bpesan']); ?></td>
@@ -125,6 +125,19 @@
   </div>
 
   <div class="form-group">
+     <label class="control-label col-md-3 col-sm-3 col-xs-12">Kategori</label>
+     <div class="col-md-9 col-sm-9 col-xs-12">
+      <select type="text" name="kat" class="form-control">
+        <?php
+          foreach ($kat->result_array() as $i) :
+        ?>
+        <option value="<?= $i['id_kategori'] ?>"><?= $i['kategori_nama'] ?></option>
+        <?php endforeach;?>
+      </select>
+    </div>
+  </div>
+
+  <div class="form-group">
    <label class="control-label col-md-3 col-sm-3 col-xs-12">Harga</label>
    <div class="col-md-9 col-sm-9 col-xs-12">
     <input type="number" name="harga" class="form-control">
@@ -194,6 +207,19 @@
         <input type="text" name="nama" value="<?php echo $i['produk_nama'];?>" class="form-control">
       </div>
     </div>
+
+    <div class="form-group">
+     <label class="control-label col-md-3 col-sm-3 col-xs-12">Kategori</label>
+     <div class="col-md-9 col-sm-9 col-xs-12">
+      <select type="text" name="kat" class="form-control">
+        <?php
+          foreach ($kat->result_array() as $a) :
+        ?>
+        <option value="<?= $a['id_kategori'] ?>"><?= $a['kategori_nama'] ?></option>
+        <?php endforeach;?>
+      </select>
+    </div>
+  </div>
 
     <div class="form-group">
      <label class="control-label col-md-3 col-sm-3 col-xs-12">Harga</label>

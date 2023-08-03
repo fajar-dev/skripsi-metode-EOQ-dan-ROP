@@ -69,6 +69,7 @@ class Padmin extends CI_Controller{
 			$user_id=$_SESSION['user_id'];
 			$x['guser']=$this->m_padmin->get_user($user_id);
 			$x['data']=$this->m_padmin->get_all_produk();
+			$x['kat']=$this->m_padmin->get_all_kategori();
 			// $x['a']=$this->m_padmin->get_all_produk_hasil_eoq();
 			// print_r($x['a']);die();
 			$this->load->view('header');
@@ -305,12 +306,13 @@ class Padmin extends CI_Controller{
 	function save_produk(){
 		$kode=$this->input->post('kode');
 		$nama=$this->input->post('nama');
+		$kat=$this->input->post('kat');
 		$harga=$this->input->post('harga');
 		$stok=$this->input->post('stok');
 		$bpesan=$this->input->post('bpesan');
 		$bsimpan=$this->input->post('bsimpan');
 		$leadtime=$this->input->post('leadtime');
-		$this->m_padmin->save_produk($kode,$nama,$harga,$stok,$bsimpan,$bpesan,$leadtime);
+		$this->m_padmin->save_produk($kode,$nama,$harga,$stok,$bsimpan,$bpesan,$leadtime,$kat);
 		echo $this->session->set_flashdata('msg','<div class="alert alert-success" role="alert"><button type="button" class="close" data-dismiss="alert"><span class="fa fa-close"></span></button> Berhasil menambahkan data kriteria</div>');
 		redirect('produk');
 	}	
@@ -318,12 +320,13 @@ class Padmin extends CI_Controller{
 	function update_produk(){
 		$kode=$this->input->post('kode');
 		$nama=$this->input->post('nama');
+		$kat=$this->input->post('kat');
 		$harga=$this->input->post('harga');
 		$stok=$this->input->post('stok');
 		$bpesan=$this->input->post('bpesan');
 		$bsimpan=$this->input->post('bsimpan');
 		$leadtime=$this->input->post('leadtime');
-		$this->m_padmin->update_produk($kode,$nama,$harga,$stok,$bsimpan,$bpesan,$leadtime);
+		$this->m_padmin->update_produk($kode,$nama,$harga,$stok,$bsimpan,$bpesan,$leadtime,$kat);
 		echo $this->session->set_flashdata('msg','<div class="alert alert-success" role="alert"><button type="button" class="close" data-dismiss="alert"><span class="fa fa-close"></span></button> Berhasil menambahkan data kriteria</div>');
 		redirect('produk');
 	}	

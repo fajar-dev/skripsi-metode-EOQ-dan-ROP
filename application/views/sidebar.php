@@ -43,7 +43,17 @@ if(isset($_SESSION['logged_in'])){
                     <li><a href="<?php echo base_url()?>permintaan">Permintaan</a></li>
                   </ul>
                 </li>
-                <li><a href="<?php echo base_url(); ?>ranking"><i class="fa fa fa-line-chart"></i>Perangkingan</a> </li>
+                <li><a><i class="fa fa-line-chart"></i>Perankingan <span class="fa fa-chevron-down"></span></a>
+                  <ul class="nav child_menu">
+                  <?php 
+                		$q = $this->db->select('*')->from('kategori')->get();
+                    $kat = $q->result_array();
+                  ?>
+                  <?php foreach ($kat as $data) { ?>
+                    <li><a href="<?php echo base_url('ranking/'.$data['id_kategori'])?>"><?= $data['kategori_nama'] ?></a></li>
+                    <?php } ?>
+                  </ul>
+                </li>
                 <?php
               if($_SESSION['user_role']=='admin'){
                 ?>
