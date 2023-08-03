@@ -61,9 +61,6 @@ if(isset($_SESSION['logged_in'])){
                 <li><a href="<?php echo base_url(); ?>supplier"><i class="fa fa-truck"></i> Supplier</a> </li>
                 <li><a href="<?php echo base_url(); ?>user"><i class="fa fa-user"></i>User</a> </li>
               <?php } ?>
-              <?php   if($_SESSION['user_role']=='pimpinan'){ ?>
-
-              <?php } ?>
             </div>
 
           </div>

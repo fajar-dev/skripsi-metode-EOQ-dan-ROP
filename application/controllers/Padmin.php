@@ -588,13 +588,14 @@ class Padmin extends CI_Controller{
 		redirect('produk/detail/'.$produk);
 	}
 
-	public function ranking(){
+	public function ranking($i){
 		if(isset($_SESSION['logged_in'])){
 			$user_id=$_SESSION['user_id'];
+			$i=$this->uri->segment(2);
 			$x['guser']=$this->m_padmin->get_user($user_id);
-			$x['eoq']=$this->m_padmin->get_all_produk_hasil_eoq();
-			$x['rop']=$this->m_padmin->get_all_produk_hasil_rop();
-			// print_r($x['eoq']);die();
+			$x['eoq']=$this->m_padmin->get_all_produk_hasil_eoq($i);
+			$x['rop']=$this->m_padmin->get_all_produk_hasil_rop($i);
+			// print_r($i);die();
 			$this->load->view('header');
 			$this->load->view('topbar',$x);
 			$this->load->view('sidebar',$x);
