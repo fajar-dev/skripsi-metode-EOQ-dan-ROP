@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.9
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Oct 26, 2018 at 11:18 PM
--- Server version: 10.1.31-MariaDB
--- PHP Version: 7.2.3
+-- Host: localhost:3306
+-- Waktu pembuatan: 03 Agu 2023 pada 05.33
+-- Versi server: 5.7.33
+-- Versi PHP: 7.4.19
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -25,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pemesanan`
+-- Struktur dari tabel `pemesanan`
 --
 
 CREATE TABLE `pemesanan` (
@@ -37,19 +36,20 @@ CREATE TABLE `pemesanan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `pemesanan`
+-- Dumping data untuk tabel `pemesanan`
 --
 
 INSERT INTO `pemesanan` (`pemesanan_id`, `produk_kode`, `pemesanan_jumlah`, `pemesanan_status`, `pemesanan_tanggal`) VALUES
-('PM01201809111', 'BR022018091110', 311, 'pending', '2018-09-11 08:24:39'),
+('PM01201809111', 'BR022018091110', 311, 'selesai', '2023-08-02 09:11:06'),
 ('PM02201809257', 'BR04201809253', 22, 'selesai', '2018-09-25 04:51:10'),
-('PM03201809252', 'BR022018091110', 22, 'batal', '2018-09-25 04:57:25'),
-('PM04201809254', 'BR04201809253', 22, 'selesai', '2018-09-25 05:00:12');
+('PM03201809252', 'BR022018091110', 22, 'selesai', '2023-08-02 08:40:01'),
+('PM04201809254', 'BR04201809253', 22, 'selesai', '2018-09-25 05:00:12'),
+('PM05202308023', 'BR03201809110', 1, 'selesai', '2023-08-02 08:46:56');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `permintaan`
+-- Struktur dari tabel `permintaan`
 --
 
 CREATE TABLE `permintaan` (
@@ -62,17 +62,23 @@ CREATE TABLE `permintaan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `permintaan`
+-- Dumping data untuk tabel `permintaan`
 --
 
 INSERT INTO `permintaan` (`permintaan_id`, `produk_kode`, `supplier_id`, `permintaan_jumlah`, `permintaan_biaya`, `permintaan_tanggal`) VALUES
 ('PM01201809115', 'BR012018091110', 2, 10, 10440000, '2018-09-11 08:12:28'),
-('PM02201809255', 'BR04201809253', 2, 30, 750000, '2018-09-25 04:16:25');
+('PM02201809255', 'BR04201809253', 2, 30, 750000, '2018-09-25 04:16:25'),
+('PM03202308021', 'BR022018091110', 2, 1, 1111500, '2023-08-02 08:42:35'),
+('PM04202308022', 'BR012018091110', 2, 1, 1044000, '2023-08-02 08:43:05'),
+('PM05202308022', 'BR022018091110', 2, 12, 13338000, '2023-08-02 08:56:19'),
+('PM06202308025', 'BR012018091110', 2, 10000, 2147483647, '2023-08-02 09:13:08'),
+('PM07202308024', 'BR012018091110', 2, 222, 231768000, '2023-08-02 09:13:40'),
+('PM08202308024', 'BR04201809253', 2, 12345, 308625000, '2023-08-02 09:15:00');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `persediaan`
+-- Struktur dari tabel `persediaan`
 --
 
 CREATE TABLE `persediaan` (
@@ -85,7 +91,7 @@ CREATE TABLE `persediaan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `persediaan`
+-- Dumping data untuk tabel `persediaan`
 --
 
 INSERT INTO `persediaan` (`persediaan_id`, `produk_kode`, `persediaan_eoq`, `persediaan_rop`, `persediaan_ss`, `persediaan_tanggal`) VALUES
@@ -95,12 +101,18 @@ INSERT INTO `persediaan` (`persediaan_id`, `produk_kode`, `persediaan_eoq`, `per
 (14, 'BR022018091110', 136.46787820354, 150030, 50010, '0000-00-00 00:00:00'),
 (15, 'BR012018091110', 4.4528177828086, 180, 60, '0000-00-00 00:00:00'),
 (16, 'BR012018091110', 4.4528177828086, 180, 60, '0000-00-00 00:00:00'),
-(17, 'BR04201809253', 21.908902300207, 52.5, 18, '0000-00-00 00:00:00');
+(17, 'BR04201809253', 21.908902300207, 52.5, 18, '0000-00-00 00:00:00'),
+(18, 'BR022018091110', 1.3646787820354, 90, 30, '2023-08-02 08:42:35'),
+(19, 'BR012018091110', 1.4081046199376, 90, 30, '2023-08-02 08:43:05'),
+(20, 'BR022018091110', 4.7273859729931, 180, 60, '2023-08-02 08:56:19'),
+(21, 'BR012018091110', 140.81046199376, 150030, 50010, '2023-08-02 09:13:08'),
+(22, 'BR012018091110', 20.980286313421, 3330, 1110, '2023-08-02 09:13:40'),
+(23, 'BR04201809253', 444.43222205416, 21609, 7203, '2023-08-02 09:15:00');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `produk`
+-- Struktur dari tabel `produk`
 --
 
 CREATE TABLE `produk` (
@@ -114,19 +126,19 @@ CREATE TABLE `produk` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `produk`
+-- Dumping data untuk tabel `produk`
 --
 
 INSERT INTO `produk` (`produk_kode`, `produk_nama`, `produk_harga`, `produk_stok`, `produk_bpesan`, `produk_bsimpan`, `produk_leadtime`) VALUES
-('BR012018091110', 'Grade YI', 1044000, 240, 103500, 10, 60),
-('BR022018091110', 'Grade JK', 1111500, 250, 103500, 10, 60),
-('BR03201809110', 'Grade MI', 571500, 2, 103500, 10, 60),
-('BR04201809253', 'Produk1', 25000, 64, 20000, 10, 7);
+('BR012018091110', 'Grade YI', 1044000, -9983, 103500, 10, 60),
+('BR022018091110', 'Grade JK', 1111500, 881, 103500, 10, 60),
+('BR03201809110', 'Grade MI', 571500, 3, 103500, 10, 60),
+('BR04201809253', 'Produk1', 25000, -12281, 20000, 10, 7);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `supplier`
+-- Struktur dari tabel `supplier`
 --
 
 CREATE TABLE `supplier` (
@@ -137,7 +149,7 @@ CREATE TABLE `supplier` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `supplier`
+-- Dumping data untuk tabel `supplier`
 --
 
 INSERT INTO `supplier` (`supplier_id`, `supplier_nama`, `supplier_tel`, `supplier_alamat`) VALUES
@@ -146,7 +158,7 @@ INSERT INTO `supplier` (`supplier_id`, `supplier_nama`, `supplier_tel`, `supplie
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Struktur dari tabel `user`
 --
 
 CREATE TABLE `user` (
@@ -157,32 +169,31 @@ CREATE TABLE `user` (
   `user_email` varchar(50) NOT NULL,
   `user_tel` char(12) NOT NULL,
   `user_alamat` text NOT NULL,
-  `user_role` enum('admin','gudang','pimpinan') NOT NULL,
+  `user_role` varchar(50) NOT NULL,
   `user_foto` varchar(50) NOT NULL DEFAULT 'team_1.jpg'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `user`
+-- Dumping data untuk tabel `user`
 --
 
 INSERT INTO `user` (`user_id`, `user_username`, `user_password`, `user_nama`, `user_email`, `user_tel`, `user_alamat`, `user_role`, `user_foto`) VALUES
-(1, 'adityads', '202cb962ac59075b964b07152d234b70', 'Aditya Dharmawan Saputraa', 'adityads@ymail.com', '082371373347', 'Jl. pangeran ayin', 'admin', 'team_1.jpg'),
-(2, 'gudang', '202cb962ac59075b964b07152d234b70', 'Rahman', 'rahman@aa.com', '123', 'aaaaa', 'gudang', '8332adf5309cc886fba1a76dc85dcd51.jpg'),
-(3, 'pimpinan', '202cb962ac59075b964b07152d234b70', 'pimpin', 'budi@aaa.com', '123', 'aaaaa', 'pimpinan', 'team_1.jpg');
+(1, 'admin', '202cb962ac59075b964b07152d234b70', 'admin', 'admin@gmail.com', '12345678', 'Jl. admin', 'admin', 'team_1.jpg'),
+(3, 'user', '202cb962ac59075b964b07152d234b70', 'user', 'user@aaa.com', '123', 'aaaaa', 'user', 'team_1.jpg');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `pemesanan`
+-- Indeks untuk tabel `pemesanan`
 --
 ALTER TABLE `pemesanan`
   ADD PRIMARY KEY (`pemesanan_id`),
   ADD KEY `produk_kode` (`produk_kode`);
 
 --
--- Indexes for table `permintaan`
+-- Indeks untuk tabel `permintaan`
 --
 ALTER TABLE `permintaan`
   ADD PRIMARY KEY (`permintaan_id`),
@@ -190,71 +201,71 @@ ALTER TABLE `permintaan`
   ADD KEY `supplier_id` (`supplier_id`);
 
 --
--- Indexes for table `persediaan`
+-- Indeks untuk tabel `persediaan`
 --
 ALTER TABLE `persediaan`
   ADD PRIMARY KEY (`persediaan_id`),
   ADD KEY `persediaan_ibfk_1` (`produk_kode`);
 
 --
--- Indexes for table `produk`
+-- Indeks untuk tabel `produk`
 --
 ALTER TABLE `produk`
   ADD PRIMARY KEY (`produk_kode`);
 
 --
--- Indexes for table `supplier`
+-- Indeks untuk tabel `supplier`
 --
 ALTER TABLE `supplier`
   ADD PRIMARY KEY (`supplier_id`);
 
 --
--- Indexes for table `user`
+-- Indeks untuk tabel `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`user_id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `persediaan`
+-- AUTO_INCREMENT untuk tabel `persediaan`
 --
 ALTER TABLE `persediaan`
-  MODIFY `persediaan_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `persediaan_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
--- AUTO_INCREMENT for table `supplier`
+-- AUTO_INCREMENT untuk tabel `supplier`
 --
 ALTER TABLE `supplier`
   MODIFY `supplier_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `user`
+-- AUTO_INCREMENT untuk tabel `user`
 --
 ALTER TABLE `user`
   MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- Constraints for dumped tables
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
 
 --
--- Constraints for table `pemesanan`
+-- Ketidakleluasaan untuk tabel `pemesanan`
 --
 ALTER TABLE `pemesanan`
   ADD CONSTRAINT `pemesanan_ibfk_1` FOREIGN KEY (`produk_kode`) REFERENCES `produk` (`produk_kode`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `permintaan`
+-- Ketidakleluasaan untuk tabel `permintaan`
 --
 ALTER TABLE `permintaan`
   ADD CONSTRAINT `permintaan_ibfk_1` FOREIGN KEY (`produk_kode`) REFERENCES `produk` (`produk_kode`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `permintaan_ibfk_2` FOREIGN KEY (`supplier_id`) REFERENCES `supplier` (`supplier_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `persediaan`
+-- Ketidakleluasaan untuk tabel `persediaan`
 --
 ALTER TABLE `persediaan`
   ADD CONSTRAINT `persediaan_ibfk_1` FOREIGN KEY (`produk_kode`) REFERENCES `produk` (`produk_kode`) ON DELETE CASCADE ON UPDATE CASCADE;

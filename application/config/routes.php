@@ -52,6 +52,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 
 $route['logout']='Loginadmin/logout';
+$route['register']='Loginadmin/register';
 $route['user']='padmin/user';
 $route['produk']='padmin/produk';
 $route['produk/detail/(:any)']='padmin/produk_detail/$i';

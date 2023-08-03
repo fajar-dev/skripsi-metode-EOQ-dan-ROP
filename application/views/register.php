@@ -33,8 +33,20 @@
     <div class="animate form login_form">
       <section class="login_content">
 
-        <form action="<?php echo base_url().'loginadmin/auth'?>" method="POST">
+        <form action="<?php echo base_url().'loginadmin/reg'?>" method="POST">
           <h1>Register</h1>
+          <div>
+            <input type="text" class="form-control" placeholder="Name" name="name" required="" />
+          </div>
+          <div>
+            <input type="text" class="form-control" placeholder="Email" name="email" required="" />
+          </div>
+          <div>
+            <input type="text" class="form-control" placeholder="Telp" name="telp" required="" />
+          </div>
+          <div>
+            <input type="text" class="form-control" placeholder="address" name="address" required="" />
+          </div>
           <div>
             <input type="text" class="form-control" placeholder="Username" name="user_username" required="" />
           </div>
@@ -42,7 +54,7 @@
             <input type="password" class="form-control" placeholder="Password" name="user_password" required="" />
           </div>
           <div>
-            <button type="submit" value="Login" class="btn btn-primary btn-block" >Login</button>
+            <button type="submit" value="Login" class="btn btn-primary btn-block" >Register</button>
           </div>
 
           <div class="clearfix"></div>
@@ -54,7 +66,7 @@
             <br />
 
             <div>
-              <p>Belum memiliki akun? <a href="" class="text-primary">Daftar</a></p>
+              <p>Sudah memiliki akun? <a href="<?php echo base_url().'loginadmin'?>" class="text-primary">Login</a></p>
             </div>
           </div>
         </form>

@@ -53,9 +53,9 @@
             <div class="clearfix"></div>
             <br />
 
-            <div>
-              <p>Belum memiliki akun? <a href="" class="text-primary">Daftar</a></p>
-            </div>
+            <!-- <div>
+              <p>Belum memiliki akun? <a href="<?php echo base_url().'register'?>" class="text-primary">Daftar</a></p>
+            </div> -->
           </div>
         </form>
       </section>

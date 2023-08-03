@@ -124,8 +124,7 @@
               <div class="col-md-9 col-sm-9 col-xs-12">
                 <select name="user_role" class="form-control">
                   <option value="admin">Admin</option>
-                  <option value="gudang">Gudang</option>
-                  <option value="pimpinan">Pimpinan</option>
+                  <option value="user">User</option>
                 </select>
               </div>
             </div>
@@ -200,8 +199,7 @@
               <div class="col-md-9 col-sm-9 col-xs-12">
                 <select name="user_role" class="form-control">
                   <option value="admin" <?php if($i['user_role']=='admin'){echo "selected";} else {}?>>Admin</option>
-                  <option value="gudang" <?php if($i['user_role']=='gudang'){echo "selected";} else {}?>>Gudang</option>
-                  <option value="pimpinan" <?php if($i['user_role']=='pimpinan'){echo "selected";} else {}?>>Pimpinan</option>
+                  <option value="user" <?php if($i['user_role']=='user'){echo "selected";} else {}?>>User</option>
                 </select>
               </div>
             </div>

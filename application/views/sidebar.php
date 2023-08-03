@@ -35,7 +35,6 @@ if(isset($_SESSION['logged_in'])){
                   <li><a href="<?php echo base_url(); ?>produk"><i class="fa fa-list"></i> Produk</a> </li>
                   <?php 
                 }
-                if($_SESSION['user_role']=='admin' || $_SESSION['user_role']=='gudang' ){
                  ?>
                  <li><a><i class="fa fa-shopping-cart"></i>Transaksi <span class="fa fa-chevron-down"></span></a>
                   <ul class="nav child_menu">
@@ -43,12 +42,11 @@ if(isset($_SESSION['logged_in'])){
                     <li><a href="<?php echo base_url()?>permintaan">Permintaan</a></li>
                   </ul>
                 </li>
+                <li><a href="<?php echo base_url(); ?>ranking"><i class="fa fa fa-line-chart"></i>Perangkingan</a> </li>
                 <?php
-              } 
               if($_SESSION['user_role']=='admin'){
                 ?>
                 <li><a href="<?php echo base_url(); ?>laporan"><i class="fa fa-file-text-o"></i>Laporan</a> </li>
-                <li><a href="<?php echo base_url(); ?>ranking"><i class="fa fa fa-line-chart"></i>Perangkingan</a> </li>
                 <li><a href="<?php echo base_url(); ?>supplier"><i class="fa fa-truck"></i> Supplier</a> </li>
                 <li><a href="<?php echo base_url(); ?>user"><i class="fa fa-user"></i>User</a> </li>
               <?php } ?>

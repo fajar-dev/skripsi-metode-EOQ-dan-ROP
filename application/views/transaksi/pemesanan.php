@@ -7,7 +7,7 @@
             <div class="x_title">
               <h2>Pemesanan</h2>
               <ul class="nav navbar-right panel_toolbox">
-                <?php if($_SESSION['user_role']=='admin'){ ?>
+                <?php if($_SESSION['user_role']=='user'){ ?>
                   <li><a href="#myModaltambah" class="btn btn-default" id="custId" data-toggle="modal" ><i class="fa fa-plus-circle"></i> Tambah Pemesanan</a></li>
                 <?php } ?>
               </ul>
@@ -22,7 +22,7 @@
                     <th>Tanggal</th>
                     <th>Jumlah</th>
                     <th class="text-center">Status</th>
-                    <?php if($_SESSION['user_role']=='gudang'){ ?>
+                    <?php if($_SESSION['user_role']=='admin'){ ?>
                       <th>Aksi</th>
                     <?php } ?>
                   </tr>
@@ -49,10 +49,12 @@
                         }
                         ?>
                       </td>
+                      <?php if($_SESSION['user_role']=='admin'){ ?>
                         <td>
                           <a href="#myModalacc<?php echo $i['pemesanan_id'];?>" class="btn btn-success" id="custId" data-toggle="modal" ><i class="fa fa-check"></i></a>
                           <a href="#myModaldec<?php echo $i['pemesanan_id'];?>" class="btn btn-danger" id="custId" data-toggle="modal" ><i class="fa fa-times"></i></a>
                         </td>
+                        <?php } ?> 
                     </tr>
                   <?php endforeach;?>
                 </tbody>
