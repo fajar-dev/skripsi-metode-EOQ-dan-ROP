@@ -55,6 +55,7 @@ $route['logout']='Loginadmin/logout';
 $route['register']='Loginadmin/register';
 $route['user']='padmin/user';
 $route['produk']='padmin/produk';
+$route['kategori']='padmin/kategori';
 $route['produk/detail/(:any)']='padmin/produk_detail/$i';
 $route['bahan']='padmin/bahan_baku';
 $route['supplier']='padmin/supplier';

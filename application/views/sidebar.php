@@ -32,6 +32,7 @@ if(isset($_SESSION['logged_in'])){
                 <?php
                 if($_SESSION['user_role']=='admin'){
                   ?>
+                  <li><a href="<?php echo base_url(); ?>kategori"><i class="fa fa-list"></i> Kategori</a> </li>
                   <li><a href="<?php echo base_url(); ?>produk"><i class="fa fa-list"></i> Produk</a> </li>
                   <?php 
                 }

@@ -17,6 +17,7 @@
   								<tr>
   									<th>Kode</th>
   									<th>Nama</th>
+                    <th>Kategori</th>
   									<th>Harga</th>
   									<th>Stok</th>
   									<th>Biaya Pesan</th>
@@ -35,6 +36,7 @@
                    ?>
                    <tr>
                     <td><?php echo $i['produk_kode']; ?></td>
+                    <td><?php echo $i['produk_nama']; ?></td>
                     <td><?php echo $i['produk_nama']; ?></td>
                     <td>Rp. <?php echo number_format($i['produk_harga']); ?></td>
                     <td><?php echo number_format($i['produk_stok']); ?></td>

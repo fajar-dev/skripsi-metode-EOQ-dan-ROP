@@ -7,6 +7,25 @@ class M_padmin extends CI_Model{
 		return $hasil;
 	}
 
+		function get_all_kategori(){
+		$hasil=$this->db->query("SELECT * FROM kategori");
+		return $hasil;
+	}
+
+		function save_kategori($nama){
+		$hasil=$this->db->query("INSERT INTO kategori (kategori_nama) VALUES ('$nama')");
+		return $hasil;
+	}
+	function update_kategori($kode,$nama){
+		$hasil=$this->db->query("UPDATE kategori SET kategori_nama='$nama' where id_kategori='$kode'");
+		return $hasil;
+	}
+
+		function delete_kategori($kode){
+		$hasil=$this->db->query("DELETE FROM kategori where id_kategori='$kode'");
+		return $hasil;
+	}
+
 	function get_all_produk(){
 		$hasil=$this->db->query("SELECT * FROM produk");
 		return $hasil;

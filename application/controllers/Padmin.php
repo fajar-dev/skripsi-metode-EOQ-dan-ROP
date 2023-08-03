@@ -28,6 +28,42 @@ class Padmin extends CI_Controller{
 			$this->load->view('footer');
 		}
 	}
+
+	public function kategori(){
+		if(isset($_SESSION['logged_in'])){
+			$user_id=$_SESSION['user_id'];
+			$x['guser']=$this->m_padmin->get_user($user_id);
+			$x['data']=$this->m_padmin->get_all_kategori();
+			$this->load->view('header');
+			$this->load->view('topbar',$x);
+			$this->load->view('sidebar',$x);
+			$this->load->view('kategori/kategori',$x);
+			$this->load->view('footer');
+		}
+	}
+
+	function save_kategori(){
+		$nama=$this->input->post('nama');
+		$this->m_padmin->save_kategori($nama);
+		echo $this->session->set_flashdata('msg','<div class="alert alert-success" role="alert"><button type="button" class="close" data-dismiss="alert"><span class="fa fa-close"></span></button> Berhasil menambahkan data kriteria</div>');
+		redirect('kategori');
+	}	
+
+	function update_kategori(){
+		$kode=$this->input->post('kode');
+		$nama=$this->input->post('nama');
+		$this->m_padmin->update_kategori($kode,$nama);
+		echo $this->session->set_flashdata('msg','<div class="alert alert-success" role="alert"><button type="button" class="close" data-dismiss="alert"><span class="fa fa-close"></span></button> Berhasil menambahkan data kriteria</div>');
+		redirect('kategori');
+	}	
+
+	function delete_kategori(){
+		$kode=$this->input->post('kode');
+		$this->m_padmin->delete_kategori($kode);
+		echo $this->session->set_flashdata('msg','success-hapus');
+		redirect('kategori');
+	}
+
 	public function produk(){
 		if(isset($_SESSION['logged_in'])){
 			$user_id=$_SESSION['user_id'];
