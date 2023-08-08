@@ -595,7 +595,9 @@ class Padmin extends CI_Controller{
 			$x['guser']=$this->m_padmin->get_user($user_id);
 			$x['eoq']=$this->m_padmin->get_all_produk_hasil_eoq($i);
 			$x['rop']=$this->m_padmin->get_all_produk_hasil_rop($i);
-			// print_r($i);die();
+			$x['kat'] =$this->m_padmin->get_kategori_byid($i)->row();
+			// print_r($data['kat']);die();
+			// print_r($x);die();
 			$this->load->view('header');
 			$this->load->view('topbar',$x);
 			$this->load->view('sidebar',$x);

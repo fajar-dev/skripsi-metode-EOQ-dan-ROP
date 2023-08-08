@@ -12,6 +12,10 @@ class M_padmin extends CI_Model{
 		return $hasil;
 	}
 
+	function get_kategori_byid($id){
+		$hasil=$this->db->query("SELECT * FROM kategori WHERE id_kategori = '$id'");
+		return $hasil;
+	}
 		function save_kategori($nama){
 		$hasil=$this->db->query("INSERT INTO kategori (kategori_nama) VALUES ('$nama')");
 		return $hasil;
