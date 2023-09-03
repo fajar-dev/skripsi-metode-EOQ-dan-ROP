@@ -22,7 +22,7 @@
   <link href="<?php echo base_url()?>assets/backend/build/css/custom.min.css" rel="stylesheet">
 </head>
 
-<body class="login">
+<body class="login" style="color: black !important;">
   <div>
     <a class="hiddenanchor" id="signup"></a>
     <a class="hiddenanchor" id="signin"></a>
@@ -31,7 +31,9 @@
    </div>
    <div class="login_wrapper">
     <div class="animate form login_form">
-      <section class="login_content">
+    <div class="x_panel">
+      <div class="x_content p-5">
+        <section class="login_content">
 
         <form action="<?php echo base_url().'loginadmin/auth'?>" method="POST">
           <h1>Login</h1>
@@ -42,7 +44,7 @@
             <input type="password" class="form-control" placeholder="Password" name="user_password" required="" />
           </div>
           <div>
-            <button type="submit" value="Login" class="btn btn-primary btn-block" >Login</button>
+            <button type="submit" value="Login" class="btn btn-dark btn-block" >Login</button>
           </div>
 
           <div class="clearfix"></div>
@@ -58,7 +60,9 @@
             </div> -->
           </div>
         </form>
-      </section>
+        </section>
+      </div>
+    </div>
     </div>
 
   </div>

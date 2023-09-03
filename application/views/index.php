@@ -3,17 +3,17 @@
 		<div class="col-md-12">
 			<div class="x_panel">
 				<div class="x_title">
-					<h2>Home</h2>
+					<h2 class="text-black" style="color: black !important;">Home</h2>
 					<div class="clearfix"></div>
 				</div>
 				<div class="x_content">
 					<?php if($_SESSION['user_role']=='admin') {?>
-						<div class="row top_tiles">
+						<div class="row top_tiles" style="color: black !important; background-color: white !important">
 							<div class="col-md-8">
-								<div class="bs-example" data-example-id="simple-jumbotron">
-									<div class="jumbotron">
+								<div class="bg-light">
+									<div class="jumbotron" style="color: black !important; background-color: white !important">
 										<h1>Hello, <?php echo $_SESSION['user_nama']; ?>!</h1>
-										<p>Anda memiliki <span class="label label-info"><?php echo $pempending['pempending']; ?></span> pemesanan yang membutuhkan konfirmasi.
+										<p class="font-weight-bold"  style="color: black !important;">Anda memiliki <span class="label label-info"><?php echo $pempending['pempending']; ?></span> pemesanan yang membutuhkan konfirmasi.
 											<div class=""><a href="<?php echo base_url(); ?>pemesanan" class="btn btn-primary">Konfirmasi Pemesanan</a></div>
 										</p>
 
@@ -38,7 +38,7 @@
 					<?php } ?>
 
 					<?php if($_SESSION['user_role']=='admin' || $_SESSION['user_role']=='pimpinan') {?>
-						<div class="row top_tiles">
+						<div class="row top_tiles " style="color: black !important; background-color: white !important">
 							<div class="animated flipInY col-lg-4 col-md-4 col-sm-6 col-xs-12">
 								<div class="tile-stats">
 									<div class="icon"><i class="fa fa-list"></i></div>
@@ -72,7 +72,7 @@
 
 
 
-	<div class="row">
+	<div class="row" style="color: black !important; background-color: white !important">
 		<div class="col-md-12">
 			<div class="x_panel">
 				<div class="x_title">

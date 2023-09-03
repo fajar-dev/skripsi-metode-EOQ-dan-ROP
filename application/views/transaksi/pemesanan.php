@@ -1,4 +1,4 @@
-  <div class="right_col" role="main">
+  <div class="right_col" role="main" style="color: black !important;">
     <div class="">
       <div class="clearfix"></div>
       <div class="row">
@@ -8,7 +8,7 @@
               <h2>Pemesanan</h2>
               <ul class="nav navbar-right panel_toolbox">
                 <?php if($_SESSION['user_role']=='user'){ ?>
-                  <li><a href="#myModaltambah" class="btn btn-default" id="custId" data-toggle="modal" ><i class="fa fa-plus-circle"></i> Tambah Pemesanan</a></li>
+                  <li><a href="#myModaltambah" class="btn btn-dark" style="color: white !important;" id="custId" data-toggle="modal" ><i class="fa fa-plus-circle"></i> Tambah Pemesanan</a></li>
                 <?php } ?>
               </ul>
               <div class="clearfix"></div>
@@ -67,7 +67,7 @@
   </div>
 
 
-  <div class="modal fade bs-example-modal-lg" id="myModaltambah" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal fade bs-example-modal-lg" style="color: black !important;" id="myModaltambah" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
 
@@ -135,7 +135,7 @@
 
   <?php foreach ($data->result_array() as $i) :  ?>
 
-    <div class="modal fade" id="ModalEdit<?php echo $i['pemesanan_id'];?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal fade" style="color: black !important;" id="ModalEdit<?php echo $i['pemesanan_id'];?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
       <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
           <div class="modal-header">
@@ -185,7 +185,7 @@
 
   <?php foreach ($data->result_array() as $i) :
     ?>
-    <div class="modal fade" id="ModalHapus<?php echo $i['pemesanan_id'];?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal fade" style="color: black !important;" id="ModalHapus<?php echo $i['pemesanan_id'];?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
@@ -211,7 +211,7 @@
 
   <?php foreach ($data->result_array() as $i) :
     ?>
-    <div class="modal fade" id="myModalacc<?php echo $i['pemesanan_id'];?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal fade" style="color: black !important;" id="myModalacc<?php echo $i['pemesanan_id'];?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
@@ -240,7 +240,7 @@
 
   <?php foreach ($data->result_array() as $i) :
     ?>
-    <div class="modal fade" id="myModaldec<?php echo $i['pemesanan_id'];?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal fade" style="color: black !important;" id="myModaldec<?php echo $i['pemesanan_id'];?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">

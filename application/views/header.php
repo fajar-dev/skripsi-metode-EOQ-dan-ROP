@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="images/favicon.ico" type="image/ico" />
 
-    <title>Admin Panel </title>
+    <title>Kosmetik</title>
 
     <link href="<?php echo base_url()?>assets/backend/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="<?php echo base_url()?>assets/backend/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">

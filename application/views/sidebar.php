@@ -5,11 +5,11 @@ if(isset($_SESSION['logged_in'])){
 }
 ?>
 
-<body class="nav-md">
-  <div class="container body">
+<body class="nav-md" style="background-color: #071437 !important;">
+  <div class="container body" style="background-color: #071437 !important;">
     <div class="main_container">
       <div class="col-md-3 left_col">
-        <div class="left_col scroll-view">
+        <div class="left_col scroll-view" style="background-color: #071437 !important;">
           <div class="navbar nav_title" style="border: 0;">
             <a href="<?php echo base_url(); ?>" class="site_title"><i class="fa fa-paw"></i> <span>Admin Panel</span></a>
           </div>

@@ -1,4 +1,4 @@
-  <div class="right_col" role="main">
+  <div class="right_col" role="main" style="color: black !important;">
     <div class="">
       <div class="clearfix"></div>
       <div class="row">
@@ -7,7 +7,7 @@
             <div class="x_title">
               <h2>permintaan</h2>
               <ul class="nav navbar-right panel_toolbox">
-                <li><a href="#myModaltambah" class="btn btn-default" id="custId" data-toggle="modal" ><i class="fa fa-plus-circle"></i> Tambah permintaan</a></li>
+                <li><a href="#myModaltambah" class="btn btn-dark" style="color: white !important;" id="custId" data-toggle="modal" ><i class="fa fa-plus-circle"></i> Tambah permintaan</a></li>
               </ul>
               <div class="clearfix"></div>
             </div>
@@ -47,7 +47,7 @@
   </div>
 
 
-  <div class="modal fade bs-example-modal-lg" id="myModaltambah" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal fade bs-example-modal-lg" style="color: black !important;" id="myModaltambah" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
 

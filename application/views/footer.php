@@ -1,7 +1,7 @@
 
 <footer>
-	<div class="pull-right">
-		&copy; 2018 
+	<div class="pull-right" style="color: black !important;">
+		&copy; 2023 
 	</div>
 	<div class="clearfix"></div>
 </footer>

@@ -1,5 +1,5 @@
   <?php $cc=$data->row_array(); ?>
-  <div class="right_col" role="main">
+  <div class="right_col" role="main" style="color: black !important;">
   	<div class="">
   		<div class="clearfix"></div>
   		<div class="row">
